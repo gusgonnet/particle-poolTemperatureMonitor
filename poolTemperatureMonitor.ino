@@ -119,6 +119,10 @@ int pool_temp()
 
     char ascii[32];
     int steinhart1 = (steinhart - (int)steinhart) * 100;
+
+    // for negative temperatures
+    steinhart1 = abs(steinhart1);
+
     sprintf(ascii,"%0d.%d", (int)steinhart, steinhart1);
     Particle.publish("pool_temp_dashboard", ascii, 60, PRIVATE);
 
