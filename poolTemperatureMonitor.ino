@@ -20,7 +20,7 @@ int _version = 1;
 // temp. for nominal resistance (almost always 25 C)
 #define TEMPERATURENOMINAL 25
 // how many samples to take and average, more takes longer
-// but is more 'smooth'
+// but measurement is 'smoother'
 #define NUMSAMPLES 5
 // The beta coefficient of the thermistor (usually 3000-4000)
 #define BCOEFFICIENT 3950
@@ -110,7 +110,7 @@ int pool_temp()
     steinhart = 1.0 / steinhart;                 // Invert
     steinhart -= 273.15;                         // convert to C
 
-  // Convert Celcius to Fahrenheit - EXPERIMENTAL, so let me know if it works please - Gustavo.
+  // Convert Celsius to Fahrenheit - EXPERIMENTAL, so let me know if it works please - Gustavo.
   // source: http://playground.arduino.cc/ComponentLib/Thermistor2#TheSimpleCode
   // project source to let me know if this works: https://www.hackster.io/gusgonnet/pool-temperature-monitor-5331f2
   if (useFahrenheit) {
